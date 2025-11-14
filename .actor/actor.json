@@ -7,9 +7,9 @@
   "meta": {
     "templateId": "javascript-crawlee-playwright"
   },
-  "input": "./.actor/INPUT_SCHEMA.json",
-  "dockerfile": "./Dockerfile",
-  "readme": "./README.md",
+  "input": "./INPUT_SCHEMA.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md",
   "categories": ["BUSINESS_AUTOMATION"],
   "storages": {
     "dataset": {
