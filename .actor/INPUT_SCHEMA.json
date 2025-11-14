@@ -65,7 +65,7 @@
       "title": "Datenquellen",
       "type": "array",
       "description": "Zu verwendende Datenquellen",
-      "editor": "json",
+      "editor": "select",
       "default": ["company_website", "linkedin", "xing"],
       "prefill": ["company_website", "linkedin", "xing"],
       "items": {
