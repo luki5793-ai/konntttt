@@ -1,0 +1,96 @@
+{
+  "title": "IT Contact Extractor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "companies": {
+      "title": "Unternehmensnamen",
+      "type": "array",
+      "description": "Liste der Unternehmen, für die Kontaktdaten extrahiert werden sollen",
+      "editor": "json",
+      "prefill": ["SAP", "Siemens", "Bosch"],
+      "items": {
+        "type": "string"
+      }
+    },
+    "country": {
+      "title": "Land/Region",
+      "type": "string",
+      "description": "Optional: Land oder Region für präzisere Suche (z.B. 'Deutschland', 'Österreich', 'Schweiz')",
+      "editor": "textfield",
+      "default": "Deutschland",
+      "prefill": "Deutschland"
+    },
+    "maxContactsPerCompany": {
+      "title": "Max. Kontakte pro Unternehmen",
+      "type": "integer",
+      "description": "Maximale Anzahl an Kontaktpersonen pro Unternehmen",
+      "default": 2,
+      "minimum": 1,
+      "maximum": 5,
+      "prefill": 2
+    },
+    "targetRoles": {
+      "title": "Zielrollen",
+      "type": "array",
+      "description": "Priorisierte Liste von Rollen/Positionen",
+      "editor": "json",
+      "default": [
+        "CTO",
+        "CIO",
+        "Head of IT",
+        "IT-Leiter",
+        "VP Engineering",
+        "Engineering Manager",
+        "HR Director",
+        "Recruiting Manager",
+        "Head of Talent Acquisition"
+      ],
+      "prefill": [
+        "CTO",
+        "CIO",
+        "Head of IT",
+        "IT-Leiter",
+        "VP Engineering",
+        "Engineering Manager",
+        "HR Director",
+        "Recruiting Manager",
+        "Head of Talent Acquisition"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "title": "Datenquellen",
+      "type": "array",
+      "description": "Zu verwendende Datenquellen",
+      "editor": "json",
+      "default": ["company_website", "linkedin", "xing"],
+      "prefill": ["company_website", "linkedin", "xing"],
+      "items": {
+        "type": "string",
+        "enum": ["company_website", "linkedin", "xing", "business_registry"]
+      }
+    },
+    "maxRequestRetries": {
+      "title": "Max. Wiederholungsversuche",
+      "type": "integer",
+      "description": "Maximale Anzahl an Wiederholungsversuchen bei fehlgeschlagenen Requests",
+      "default": 3,
+      "minimum": 0,
+      "maximum": 10,
+      "prefill": 3
+    },
+    "proxyConfiguration": {
+      "title": "Proxy-Konfiguration",
+      "type": "object",
+      "description": "Apify Proxy-Konfiguration für anonymes Scraping",
+      "editor": "proxy",
+      "prefill": {
+        "useApifyProxy": true
+      }
+    }
+  },
+  "required": ["companies"]
+}

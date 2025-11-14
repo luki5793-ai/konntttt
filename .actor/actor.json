@@ -1,0 +1,85 @@
+{
+  "actorSpecification": 1,
+  "name": "it-contact-extractor",
+  "title": "IT Contact Extractor - IT-Leiter & Hiring Manager Kontakte",
+  "description": "Extrahiert Kontaktdaten von IT-Leitern und Hiring Managern aus verschiedenen Quellen (Unternehmenswebsites, LinkedIn, Xing). Vollautomatische Extraktion mit Validierung und Deduplizierung.",
+  "version": "1.0.0",
+  "meta": {
+    "templateId": "javascript-crawlee-playwright"
+  },
+  "input": "./.actor/INPUT_SCHEMA.json",
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "categories": ["BUSINESS_AUTOMATION"],
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Extracted Contacts",
+      "description": "Dataset containing extracted contact information",
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": [
+              "company",
+              "location",
+              "salutation",
+              "firstName",
+              "lastName",
+              "email",
+              "phone",
+              "jobTitle",
+              "linkedInUrl",
+              "source"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "company": {
+                "label": "Unternehmen",
+                "format": "text"
+              },
+              "location": {
+                "label": "Standort",
+                "format": "text"
+              },
+              "salutation": {
+                "label": "Anrede",
+                "format": "text"
+              },
+              "firstName": {
+                "label": "Vorname",
+                "format": "text"
+              },
+              "lastName": {
+                "label": "Nachname",
+                "format": "text"
+              },
+              "email": {
+                "label": "E-Mail",
+                "format": "text"
+              },
+              "phone": {
+                "label": "Telefon",
+                "format": "text"
+              },
+              "jobTitle": {
+                "label": "Position",
+                "format": "text"
+              },
+              "linkedInUrl": {
+                "label": "LinkedIn",
+                "format": "link"
+              },
+              "source": {
+                "label": "Quelle",
+                "format": "text"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

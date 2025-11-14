@@ -1,0 +1,36 @@
+{
+  "name": "it-contact-extractor",
+  "version": "1.0.0",
+  "description": "Apify Actor for extracting IT leader and hiring manager contact information from various sources",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "apify",
+    "actor",
+    "contact-extraction",
+    "web-scraping",
+    "crawlee",
+    "playwright",
+    "lead-generation",
+    "business-automation"
+  ],
+  "author": "IT Contact Extractor",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "apify": "^3.1.0",
+    "crawlee": "^3.5.0",
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luki5793-ai/konntttt"
+  }
+}
